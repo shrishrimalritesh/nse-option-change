@@ -25,7 +25,7 @@ app.get('/api/data', async (req, res) => {
     let oiCE = 0
     let upperLimit = roundToNearest(data?.records?.underlyingValue)+400
     let lowerLimit = roundToNearest(data?.records?.underlyingValue)-400
-    console.log(data,"data")
+    // console.log(data,"data")
     let result = []
     data?.records?.data.filter(option =>{
         if( option.expiryDate === expiryDate && option.strikePrice <= upperLimit && option.strikePrice >= lowerLimit ){
