@@ -17,7 +17,8 @@ function roundToNearest(number) {
 
 app.get('/api/data', async (req, res) => {
   try {
-    const response = await axios.get('https://www.nseindia.com/api/option-chain-indices?symbol=NIFTY');
+    const symbol = req.query.symbol || 'NIFTY'; // default value is NIFTY
+    const response = await axios.get(`https://www.nseindia.com/api/option-chain-indices?symbol=${symbol}`);
     const data = response.data;
     let expiryDate = data?.records?.expiryDates[0];
     let oiPE = 0
