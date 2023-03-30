@@ -15,7 +15,7 @@ function roundToNearest(number) {
   }
 }
 
-app.get('/api/data', async (req, res) => {
+app.get('/', async (req, res) => {
   try {
     const symbol = req.query.symbol || 'NIFTY'; // default value is NIFTY
     const response = await axios.get(`https://www.nseindia.com/api/option-chain-indices?symbol=${symbol}`);
